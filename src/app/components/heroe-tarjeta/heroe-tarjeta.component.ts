@@ -20,8 +20,8 @@ export class HeroeTarjetaComponent implements OnInit {
   }
 
   viewHero() {
-    // this.route.navigate(['/heroe', this.index]);
-    this.heroeSeleccionado.emit( this.index );
+    this.route.navigate(['/heroe', this.index]);
+    // this.heroeSeleccionado.emit( this.index );
   }
 
 }
