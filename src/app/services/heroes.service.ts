@@ -56,7 +56,7 @@ export class HeroesService {
   ];
 
   constructor() {
-    console.log('Servicio listo para usar');
+    // console.log('Servicio listo para usar');
   }
 
   getHeroes(): Heroe[] {
@@ -65,6 +65,21 @@ export class HeroesService {
 
   getHero( idx: string) {
     return this.heroes[idx];
+  }
+
+  buscarHeroes( termino: string): Heroe[] {
+    const heroesArr: Heroe[] = [];
+    // convert the input string in lowercase
+    termino = termino.toLowerCase();
+
+    for (const heroe of this.heroes) {
+      const nombre = heroe.nombre.toLowerCase();
+      // Si lo encontró, agreguelo al array
+      if (nombre.indexOf( termino ) >= 0) {
+        heroesArr.push( heroe );
+      }
+    }
+    return heroesArr;
   }
 }
 
